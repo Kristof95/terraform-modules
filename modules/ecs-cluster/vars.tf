@@ -1,51 +1,32 @@
-variable "aws_account_id" {
-}
+variable "AWS_ACCOUNT_ID" {}
+variable "AWS_REGION" {}
+variable "LOG_GROUP" {}
+variable "VPC_ID" {}
+variable "CLUSTER_NAME" {}
+variable "INSTANCE_TYPE" {}
+variable "SSH_KEY_NAME" {}
+variable "VPC_SUBNETS" {}
 
-variable "aws_region" {
-}
-
-variable "log_group" {
-}
-
-variable "vpc_id" {
-}
-
-variable "cluster_name" {
-}
-
-variable "instance_type" {
-}
-
-variable "ssh_key_name" {
-}
-
-variable "vpc_subnets" {
-}
-
-variable "ecs_termination_policies" {
+variable "ECS_TERMINATION_POLICIES" {
   default = "OldestLaunchConfiguration,Default"
 }
 
-variable "ecs_minsize" {
+variable "ECS_MINSIZE" {
   default = 1
 }
 
-variable "ecs_maxsize" {
+variable "ECS_MAXSIZE" {
   default = 1
 }
 
-variable "ecs_desired_capacity" {
+variable "ECS_DESIRED_CAPACITY" {
   default = 1
 }
 
-variable "enable_ssh" {
+variable "ENABLE_SSH" {
   default = false
 }
 
-variable "ssh_sg" {
+variable "SSH_SG" {
   default = ""
-}
-
-variable "log_retention_days" {
-  default = 0
 }
