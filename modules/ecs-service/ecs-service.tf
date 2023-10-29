@@ -21,7 +21,7 @@ data "aws_ecs_task_definition" "ecs-service" {
 data "template_file" "ecs-service" {
   template = "${file("${path.module}/ecs-service.json")}"
 
-  vars {
+  vars = {
     APPLICATION_NAME    = "${var.APPLICATION_NAME}"
     APPLICATION_PORT    = "${var.APPLICATION_PORT}"
     APPLICATION_VERSION = "${var.APPLICATION_VERSION}"
