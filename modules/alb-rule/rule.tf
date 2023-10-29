@@ -1,10 +1,9 @@
 variable "LISTENER_ARN" {}
 variable "PRIORITY" {}
 variable "TARGET_GROUP_ARN" {}
-variable "CONDITION_FIELD" {}
 
 variable "CONDITION_VALUES" {
-  type = "list"
+  type = list
 }
 
 resource "aws_lb_listener_rule" "alb_rule" {
@@ -17,7 +16,8 @@ resource "aws_lb_listener_rule" "alb_rule" {
   }
 
   condition {
-    field  = "${var.CONDITION_FIELD}"
-    values = ["${var.CONDITION_VALUES}"]
+    host_header {
+      values = var.CONDITION_VALUES
+    }
   }
 }
